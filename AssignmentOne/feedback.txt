@@ -1,0 +1,121 @@
+QUESTION 1
+
+	>> rand("state", 610379900918)
+	>> rand(1)
+	ans =  0.63536
+
+QUESTION 2
+
+	FEEDBACK:
+	The Octave code is
+
+	>> t1 = [2003, 2, 18, 8, 27, 30]
+	t1 =
+
+	   2003      2     18      8     27     30
+
+	>> t2 = [2008, 8, 13, 19, 35, 9]
+	t2 =
+
+	   2008      8     13     19     35      9
+
+	>> etime(t2, t1)
+
+	ans =  173099259
+
+	Therefore the required answer is 173099259 seconds
+
+QUESTION 3
+
+	FEEDBACK:
+	The Octave code is
+
+	function S = question_3(min, max)
+	  S = min;
+	  sign = 1;
+	  
+	  for i = min:2:max,
+	    S = S + (i * sign);
+	    sign = sign * -1;
+	  end
+	endfunction
+
+	>> question_3(1, 1001)
+	ans =  502
+
+	Therfore the required answer is 502
+
+QUESTION 4
+
+	FEEDBACK:
+	The Octave code is
+
+	function S = question_4 (val1, val2)
+	  u(1) = val1; ## First Values in series
+	  u(2) = val2;
+	  S = val1 + val2; ## Store the sum
+	  n = 2; ## Track the index
+	  
+	  while (abs(u(n)) >= 10^2) ## Iterate until this condition is true
+	    n = n + 1; ## Increment index
+	    u(n) = u(n - 2)^2 + u(n - 1)^1.5; ## Enforce recurrence relation
+	    S = S + u(n); ## Update sum of series
+	  endwhile
+	  
+	endfunction
+
+	>> question_4(0.1, 0.2)
+	ans =  0.30000
+
+	Perhaps there is a mistake with this question.
+	u(n) < 10^2 is already true with the given intialisation values
+	therefore iteration will never occur
+
+	Therefore the required answer is 0, because the summation should never occur in this instance.
+
+QUESTION 5
+
+	FEEDBACK:
+	The Octave code is
+
+	function S = question_5 (val)
+	  u(1) = val; ## First Values in series
+	  S = val; ## Store the sum
+	  n = 1; ## Track the index
+	  
+	  while (abs(u(n)) >= 10e-18) ## Iterate until this condition is true
+	    n = n + 1; ## Increment index
+	    u(n) = u(n - 1)^2; ## Enforce recurrence relation
+	    S = S + u(n); ## Update sum of series
+	  endwhile
+	  
+	endfunction
+
+	>> question_5(0.5)
+	ans =  0.81642
+
+	Therfore the required answer is 0.81642
+
+QUESTION 6
+
+	FEEDBACK:
+	The Ocatve code is
+
+	function S = question_6 (min, max)
+	  
+	  S = 0;
+	  
+	  for k = min:max,
+	    L = 1 / (1 + (1 / k)); ## Calculate L(k)
+	    x = L / (L * sqrt(L + (20 * pi^2))); ## Calculate x(k)
+	    S = S + (x * L); ## Update the sum for this k value of x.L
+	  endfor
+	endfunction
+
+	>> question_6(1, 50)
+	ans =  3.3005
+
+	Therefore the required answer is 3.005
+
+
+

@@ -1,0 +1,18 @@
+FEEDBACK:
+The Octave code is
+
+>> t1 = [2003, 2, 18, 8, 27, 30]
+t1 =
+
+   2003      2     18      8     27     30
+
+>> t2 = [2008, 8, 13, 19, 35, 9]
+t2 =
+
+   2008      8     13     19     35      9
+
+>> etime(t2, t1)
+
+ans =  173099259
+
+Therefore the required answer is 173099259 seconds

@@ -1,0 +1,25 @@
+FEEDBACK:
+The Octave code is
+
+function S = question_4 (val1, val2)
+  u(1) = val1; ## First Values in series
+  u(2) = val2;
+  S = val1 + val2; ## Store the sum
+  n = 2; ## Track the index
+  
+  while (abs(u(n)) >= 10^2) ## Iterate until this condition is true
+    n = n + 1; ## Increment index
+    u(n) = u(n - 2)^2 + u(n - 1)^1.5; ## Enforce recurrence relation
+    S = S + u(n); ## Update sum of series
+  endwhile
+  
+endfunction
+
+>> question_4(0.1, 0.2)
+ans =  0.30000
+
+Perhaps there is a mistake with this question.
+u(n) < 10^2 is already true with the given intialisation values
+therefore iteration will never occur
+
+Therefore the required answer is 0, because the summation should never occur in this instance.

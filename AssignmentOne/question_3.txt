@@ -1,0 +1,17 @@
+FEEDBACK:
+The Octave code is
+
+function S = question_3(min, max)
+  S = min;
+  sign = 1;
+  
+  for i = min:2:max,
+    S = S + (i * sign);
+    sign = sign * -1;
+  end
+endfunction
+
+>> question_3(1, 1001)
+ans =  502
+
+Therfore the required answer is 502
